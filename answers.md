@@ -6,11 +6,11 @@ profile = document.querySelector('.profile-image');
 profile.src = 'https://placebear.com/400/400';
 ```
 
-  1.1 Use the same approach to select the element that contains the photo of the sky and change the src attribute to another picture URL of your choosing.
-  ```
-  s = document.querySelector('#left-image').firstElementChild
-  s.src = 'https://picsum.photos/325/225';
-  ```
+1.1 Use the same approach to select the element that contains the photo of the sky and change the src attribute to another picture URL of your choosing.
+```
+s = document.querySelector('#left-image').firstElementChild
+s.src = 'https://picsum.photos/325/225';
+```
 
 2. Select the heading that says "Panda the Bear" and change it to your own name.
 ```
