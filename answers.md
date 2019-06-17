@@ -120,7 +120,7 @@ for (let i = 0; i < 10; i++) {
 };
 ```
 
-3. Let’s add a message about when the page was last updated. We'll do this by appending a new <li> element to the <ul> in the sidebar (you might need to refresh the page to bring back the list items that we emptied out earlier).
+3. Let’s add a message about when the page was last updated. We'll do this by appending a new li element to the ul in the sidebar (you might need to refresh the page to bring back the list items that we emptied out earlier).
 ```
 li = document.querySelector('.bio-info-item');
 liClone = li.cloneNode(true);
