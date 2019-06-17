@@ -1,5 +1,7 @@
 # Panda The Bear Answers
 
+## Part 1
+
 1. Select the element that contains the profile image (hint: look for the class). Change the src attribute so it points to a picture of your choosing instead.
 ```
 profile = document.querySelector('.profile-image');
@@ -86,4 +88,43 @@ document.querySelector('#submit').disabled = true;
 bio = document.querySelector('.bio-info');
 parent = bio.parentElement;
 parent.removeChild(bio);
+```
+
+
+## Part 2
+
+### Removing Elements from the DOM
+
+1. Panda the Bear is lying about their skills! Take the "time travel" skill off the page to satisfy your personal sense of justice. Use your googling and docs-skimming skillz to find a function that will allow you to remove elements from the DOM. (hint: there are multiple ways of doing this, but parentNode might be useful when it comes to selecting the right element)
+```
+tt = document.querySelector('#time-travel');
+ttParent = tt.parentElement;
+skills = ttParent.parentElement;
+skills.removeChild(ttParent);
+```
+
+### Adding Elements to the DOM
+
+1. That drawing of Pikachu is really cute. Let’s duplicate it using cloneNode() and insert it at the bottom of the .portfolio-container using insertAdjacentHTML() or appendChild().
+```
+pika = document.querySelector('#right-image');
+newPika = pika.cloneNode(true);
+pika.parentElement.appendChild(newPika);
+```
+
+2. Wow, that was so satisfying I think we should do it 10 more times. Use a for loop to help you do this.
+```
+for (let i = 0; i < 10; i++) {
+    n = pika.cloneNode(true);
+    pika.parentElement.appendChild(n);
+};
+```
+
+3. Let’s add a message about when the page was last updated. We'll do this by appending a new <li> element to the <ul> in the sidebar (you might need to refresh the page to bring back the list items that we emptied out earlier).
+```
+li = document.querySelector('.bio-info-item');
+liClone = li.cloneNode(true);
+liClone.querySelector('.bio-info-title').innerText = 'Last updated';
+liClone.querySelector('.bio-info-value').innerText = 'June 2019';
+li.parentElement.appendChild(liClone);
 ```
